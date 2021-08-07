@@ -26,3 +26,5 @@ kubectl | cluster-info --context kind-[namecluster] | getting connetcion of the 
 kubectl | get nodes | list nodes on cluster 
 kubectl | config get-clusters | list all cluster 
 kubectl | config use-context [namecluster] | change connection to another cluster 
+kubectl | apply -f [path]/[filename.yaml] | apply pod file on cluster 
+kubectl | port-foward pod/[nameapp] [portOut:portIn]/[filename.yaml] | apply pod file on cluster 

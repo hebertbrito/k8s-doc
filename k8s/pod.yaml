@@ -1,0 +1,10 @@
+apiVersion: v1 #varias versões para cada tipo de aplicações
+kind: Pod
+metadata:
+  name: "nodeserver" #nome do POD
+  labels:
+    name: "nodeserver" #etiqueta pode ser usado como filtro
+spec: #especificação do POD
+  containers:
+  - name: nodeserver
+    image: "hebertoliveira/server:latest" # getting image from docker hub
