@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeserver-service
+spec:
+  selector:
+    app: nodeserver
+  type: LoadBalancer
+  ports:
+  - name: nodeserver-service
+    #targetPort: <Target Port> normalmente a porta do container que foi exposta
+    port: 8000  #porta do service
+    protocol: TCP
+    #nodePort: 30001 #30.000 32.767
