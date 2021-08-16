@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodeserver-env
+data:
+  USER: "Felipe"
+  AGE: "36"

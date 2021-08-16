@@ -36,3 +36,4 @@ kubectl | rollout history [typeoject] [name] | shows historic version/revision
 kubectl | rollout history [typeoject] [name] --to-revision=[number] | back to the specific revision informed
 kubectl | rollout undo [typeoject] [name] | back to the last revision used
 kubectl | proxy --port[port] | shows all endpoint by kubernets and own endpoints created
+kubectl | exec -it [podname] -- bash | enter on bash command inside pod file
