@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeserver
+  labels:
+    app: nodeserver
+spec:
+  replicas: 1 #what u want
+  selector:
+    matchLabels:
+      app: nodeserver
+  template:
+    metadata:
+      labels:
+        app: "nodeserver"
+    spec:
+      containers:
+        - name: nodeserver
+          image: "hebertoliveira/server:v2.1"
+          #startupProbe using it always together with seconds below
+          #other option is using redinessProbe, there's option to cobine with livenessProbe
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000 #container, isn't port server
+            periodSeconds: 5 #how much time, must be cheking server
+            failureThreshold: 1 #how many times should errors occur, to restart the container
+            timeoutSeconds: 1 #timesecond to request endpoint on server
+            successThreshold: 1
+
+          envFrom:
+            - configMapRef:
+                name: nodeserver-env

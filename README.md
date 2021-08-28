@@ -28,6 +28,7 @@ kubectl | get nodes | list nodes on cluster
 kubectl | config get-clusters | list all cluster 
 kubectl | config use-context [namecluster] | change connection to another cluster 
 kubectl | apply -f [path]/[filename.yaml] | apply pod file on cluster 
+kubectl | apply -f [path]/[filename.yaml] && watch -n1 kubectl get pods| apply pod file on cluster and watching pods
 kubectl | port-forward pod/[nameapp] [portOut:portIn]/[filename.yaml] | apply pod file on cluster 
 kubectl | delete pods --all | delete all pods
 kubectl | get replicasets | list all replicasets
